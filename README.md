@@ -14,7 +14,8 @@ Put near at the top of the document, where the other <lib dir> entries are, this
     
     <lib dir="${solr.install.dir:../../../..}/dist/" regex="solr-dataimporthandler-.*.jar" />
 
-Also copy and paste the following into where the requestHandler entries are:
+Also copy and paste the following, where you will need to change the "config tag" to match the location
+of the data-config.xml file you will be making in the next step, into where the requestHandler entries are:
 
     <requestHandler name="/dataimport" class="org.apache.solr.handler.dataimport.DataImportHandler">
         <lst name="defaults">
@@ -22,7 +23,8 @@ Also copy and paste the following into where the requestHandler entries are:
         </lst>
     </requestHandler>
     
-Make a new file called "data-config.xml" and paste this into it. 
+Make a new file called "data-config.xml" and paste this into it. You will need to change the url line to match
+the location of the downloaded wikifile (Wikipedia-20191102205313.xml) for this project.
 
     <dataConfig>
         <dataSource type="FileDataSource" encoding="UTF-8" />
@@ -31,7 +33,7 @@ Make a new file called "data-config.xml" and paste this into it.
                 processor="XPathEntityProcessor"
                 stream="true"
                 forEach="/mediawiki/page/"
-                url="/data/enwiki-20130102-pages-articles.xml"
+                url="/data/Wikipedia-20191102205313.xml"
                 transformer="RegexTransformer,DateFormatTransformer"
                 >
             <field column="id"        xpath="/mediawiki/page/id" />
