@@ -20,7 +20,7 @@ of the data-config.xml file you will be making in the next step, into where the 
 
     <requestHandler name="/dataimport" class="org.apache.solr.handler.dataimport.DataImportHandler">
         <lst name="defaults">
-            <str name="config">/path/to/my/DIHconfigfile.xml</str>
+            <str name="config">data-config.xml</str>
         </lst>
     </requestHandler>
     
