@@ -8,6 +8,7 @@ Setting Up Solr Configuration
 Start solr 7 and run:
     
     bin/solr create -c TermProject
+    bin/solr config -c TermProject -p 8983 -property update.autoCreateFields -value false
     
 If you are running Solr, stop it and then go into /server/solr/TermProject/conf/ and edit solrconfig.xml
 Put near at the top of the document, where the other <lib dir> entries are, this line:
