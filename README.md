@@ -10,7 +10,7 @@ Start solr 7 and run:
     bin/solr create -c TermProject
     bin/solr config -c TermProject -p 8983 -property update.autoCreateFields -value false
     
-If the second command doesn't work, you will need to edit solrconfig.xml in ____ and edit the autoCreateFields line to look like this
+If the second command doesn't work, you will need to edit solrconfig.xml in /server/solr/TermProject/conf/ and edit the autoCreateFields line to look like this
 
       <!-- The update.autoCreateFields property can be turned to false to disable schemaless mode -->
       <updateRequestProcessorChain name="add-unknown-fields-to-the-schema" default="${update.autoCreateFields:true}"
