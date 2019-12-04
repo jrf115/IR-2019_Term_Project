@@ -3,7 +3,7 @@ Quizzes States
 =
 This project is to make a Quiznaire Application that uses Apache Solr to index and easily retrieve data to generate questions. 
 
-Setting Up Solr Configuration
+Setting Up Solr Configuration and Indexing
 =
 Start solr 7 and run:
     
@@ -55,3 +55,15 @@ the location of the downloaded wikifile (Wikipedia-20191102205313.xml) for this 
     </dataConfig>
     
 You should get a simple response header at http://localhost:8983/solr/TermProject/dataimport?command=full-import if you start up solr.
+
+Setting up PHP
+=
+You can load the page by running the built in web server in PHP. Run the following command to install the PHP client on Linux:
+
+    sudo apt instaall php7.2-cli
+    
+Then cd into the /src folder in this project, and run the following command to run the PHP client.
+
+    php -S localhost:8000
+
+You can then access the index.php in your web browser at the this link: http://localhost:8000/public_html/index.php
